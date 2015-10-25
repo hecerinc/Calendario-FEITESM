@@ -1,0 +1,196 @@
+@import "_ui.scss";
+
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+header{
+	padding:20rem 0 15rem;
+	h1{
+		font-weight: 700;
+		font-size: 5rem;
+		margin-bottom: 40px;
+	}
+	.subtitle{
+		color: #82cbe9;
+		font-weight: 300;
+		font-size: 3.8rem;
+	}
+	h2{
+		color: rgba(255,255,255,.5);
+		font-size: 1.6rem;
+		font-weight: 400;
+		letter-spacing: 0;
+		a{
+			color: rgba(255,255,255,.9);
+		}
+	}
+}
+.title{
+	position: relative;
+	padding-right: 65px;
+	display: inline-block;
+	color: #0096ff;
+	font-weight: 700;
+	&:after{
+		content:'';
+		// margin-top: -2px;
+		position: absolute;
+		right: 0; top: 50%;
+		width: 50px; height: 3px;
+		display: inline-block;
+		background-color: #0096ff;
+	}
+	&.l-gray:after{ background-color: $darkGray; height: 2px; margin-top: -1px; }
+}
+section.slider{
+	width: 100%;
+	max-width: 1080px;
+	box-sizing:border-box;
+	margin: 0 auto;
+}
+.calendar{
+	.layout-icons{
+		.list-view, .grid-view{
+			width: 2.2em;
+			height: 2.2em;
+			display: inline-block;
+			path{fill: #8c8c8c;}
+		}
+	}
+}
+.overlay{
+	top: 0; left: 0;
+	// z-index: 999;
+	width: 100%;
+	height: 100%;
+	position: absolute; 
+	z-index: 200; 
+	opacity:0;
+}
+.add-all{
+	margin-top: 15px;
+}
+.events{
+	*, *::before, *::after{box-sizing:border-box;}
+	margin-bottom: 5%;
+	.event{
+		// height: 200px;
+		position: relative;
+		.overlay{
+			@include bgtrans($skyblue, .9);
+			@include transition(all,300ms);
+			.va-p, &{
+				max-height: 220px;
+				overflow:hidden;
+			}
+			.va{
+				*{color: #fff;}
+				@include transition(all,300ms);
+				@include transform(translate(0, -50px)); 
+			}
+		}
+		&:hover .overlay{ opacity:1; .va{ @include transform(translate(0, 0)); } }
+		.square{
+			display: block;
+			position: relative;
+			height: 100%;
+		}
+		img{
+			border:1px solid #ccc;
+		}
+		.caption{
+			font-size: 1.4rem;
+			color: $text;
+			display: block;
+		}
+		.date{
+			position: absolute;
+			z-index: 100;
+			background-color:$lblue;
+			color: #fff;
+			font-size: 3rem;
+			font-weight: 700;
+			width: 60px;
+			height: 60px;
+			display: block;
+			padding-top: 5px;
+			right:0;
+			top: 0;
+			text-align: center;
+		}
+	}
+
+}
+.event .overlay{
+	h5{font-weight: 700; margin-bottom: 7%; line-height: 2.5rem;}
+	p{
+		font-size: 1.4rem;
+		font-weight: 400;
+		margin-bottom: 11%;
+		line-height: 1.7rem;
+	}
+	.va{
+		padding:11%;
+		pointer-events: none;
+	}
+	.bg-navy.btn{
+		@include bgtrans($navy, .8); 
+		font-size: 1.3rem;
+		padding: 7px 20px;
+		position: absolute;
+		bottom:-12%;
+		pointer-events:auto;
+	}
+	.daybr{
+		max-width: 60px;
+		font-weight: 400;
+		font-size: 4rem;
+		line-height: 1.7rem;
+		margin-bottom: 0;
+		position: absolute;
+		right: 3%;
+		bottom: -16%;
+		small{font-size: 1.1rem;}
+	}
+}
+/* Rewrite column width for calendar */
+.calendar{
+	@media(min-width: 550px){
+		.three.columns{
+			width: 23.0476190%;
+			margin-left: 2.5%;
+			&:first-child{margin-left: 0;}
+		}
+	}
+}
+footer{
+	height:55px;
+	padding-top: 18px;
+	box-sizing:border-box;
+	background-color:#262626;
+	p{color: rgba(255,255,255,.6); margin: 0}
+}
+/* Media Queries
+------------------------------------------------- */
+/*
+Note: The best way to structure the use of media queries is to create the queries
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it
+there.
+*/
+
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
