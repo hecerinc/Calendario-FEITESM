@@ -47,6 +47,7 @@ section.slider{
 	max-width: 1080px;
 	box-sizing:border-box;
 	margin: 0 auto;
+	margin-top: 5%;
 }
 .calendar{
 	.layout-icons{
@@ -151,6 +152,22 @@ section.slider{
 		right: 3%;
 		bottom: -16%;
 		small{font-size: 1.1rem;}
+	}
+}
+.slickerd{
+	width: 200px;
+	.thumb{
+		img{		
+			margin-bottom: 7px;
+			width: 100%;
+			height: 100px;
+		}
+	}
+}
+.feature-img{
+	width: 860px;
+	img{
+		width: 100%;
 	}
 }
 /* Rewrite column width for calendar */

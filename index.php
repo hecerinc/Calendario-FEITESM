@@ -21,6 +21,8 @@
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/slick-theme.css">
 	<link rel="stylesheet" href="style.css">
 	<!-- Favicon
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -31,12 +33,58 @@
 		<div class="container">
 			<h1 class="lh90 mb40">Calendario de Eventos <br> <span class="subtitle">Comunidades Estudiantiles</span></h1>
 			<h2>un proyecto de <a href="#">Grupo Nueva Prensa</a></h2>
-		</div>		
+		</div>
 	</header>
+	<!-- Slider -->
 	<section class="slider u-cf">
-		<h1>Slider</h1>
+		<div class="feature-img u-fl">
+			<div class="ftr">
+				<img src="img/fbevent.png" alt="Featured image title">
+			</div>
+			<div class="ftr">
+				<img src="img/fbevent.png" alt="Featured image title">
+			</div>
+			<div class="ftr">
+				<img src="img/fbevent.png" alt="Featured image title">
+			</div>
+			<div class="ftr">
+				<img src="img/fbevent.png" alt="Featured image title">
+			</div>
+			<div class="ftr">
+				<img src="img/fbevent.png" alt="Featured image title">
+			</div>
+			<div class="ftr">
+				<img src="img/fbevent.png" alt="Featured image title">
+			</div>
+			<div class="ftr">
+				<img src="img/fbevent.png" alt="Featured image title">
+			</div>
+		</div>
+		<div class="slickerd u-fr">
+			<div class="thumb">
+				<img src="img/event.png" alt="Image">
+			</div>
+			<div class="thumb">
+				<img src="img/event.png" alt="Image">
+			</div>
+			<div class="thumb">
+				<img src="img/event.png" alt="Image">
+			</div>
+			<div class="thumb">
+				<img src="img/event.png" alt="Image">
+			</div>
+			<div class="thumb">
+				<img src="img/event.png" alt="Image">
+			</div>
+			<div class="thumb">
+				<img src="img/event.png" alt="Image">
+			</div>
+			<div class="thumb">
+				<img src="img/event.png" alt="Image">
+			</div>
+		</div>
 	</section>
-	<div class="clear h100px"></div>
+	<div class="clear "></div>
 	<section class="calendar container">
 		<h3 class="title">Eventos de la semana</h3>
 		<a href="#" class="u-fr add-all">Agregar todos a mi calendario</a>
@@ -79,6 +127,7 @@
 		<p class="text-center fz12">Copyright &copy; 2015 H&eacute;ctor Rinc&oacute;n</p>
 	</footer>
 <script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/slick.min.js"></script>
 <script>
 	$('section, article, .img-bg').each(function(){ 
 		if($(this).attr('data-bg')) 
@@ -95,6 +144,21 @@
 			'background-position': 'center top'
 		});
 	}
+	$('.slickerd').slick({
+		vertical: true,
+		verticalSwiping: true,
+		slidesToScroll:1,
+		slidesToShow: 3,
+		focusOnSelect: true,
+		asNavFor: '.feature-img'
+	});
+	$('.feature-img').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		// fade: true,
+		asNavFor: '.slickerd'
+	});
 </script>
 </body>
 </html>
