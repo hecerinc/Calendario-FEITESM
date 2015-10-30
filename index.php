@@ -16,13 +16,14 @@
 	<!-- FONT
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<!-- <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
-
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
 	<!-- CSS
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/slick.css">
 	<link rel="stylesheet" href="css/slick-theme.css">
+	<link rel="stylesheet" href="css/dropkick.css">
 	<link rel="stylesheet" href="style.css">
 	<!-- Favicon
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -31,6 +32,18 @@
 <body>
 	<header class="special-img-bg" data-bg="img/header.png">
 		<div class="container">
+			<div class="nav u-fr">
+				<nav class="main">
+					<a href="#" class="hamburger"><?= file_get_contents('img/hamburger.svg') ?></a>
+					<div class="clear"></div>
+					<ul>
+						<li><a href="#">Inicio</a></li>
+						<li><a href="register.php">Registra tu evento</a></li>
+						<li><a href="#">Cont&aacute;ctanos</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="clear"></div>
 			<h1 class="lh90 mb40">Calendario de Eventos <br> <span class="subtitle">Comunidades Estudiantiles</span></h1>
 			<h2>un proyecto de <a href="#">Grupo Nueva Prensa</a></h2>
 		</div>
@@ -89,6 +102,12 @@
 		<h3 class="title">Eventos de la semana</h3>
 		<a href="#" class="u-fr add-all">Agregar todos a mi calendario</a>
 		<div class="clear"></div>
+		<select id="period" class="dropkick u-fl">
+			<option value="1">25 al 31 de octubre</option>
+			<option value="2">22 al 28 de noviembre</option>
+			<option value="3">29 de nov al 5 de dic</option>
+		</select>
+		<!-- <div class="clear"></div> -->
 		<div class="layout-icons u-fr">
 			<a href="#" class="list-view"><?= file_get_contents('img/listview.svg'); ?></a>
 			<a href="#" class="grid-view"><?= file_get_contents('img/grid.svg'); ?></a>
@@ -128,6 +147,7 @@
 	</footer>
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/slick.min.js"></script>
+<script src="js/dropkick.js"></script>
 <script>
 	$('section, article, .img-bg').each(function(){ 
 		if($(this).attr('data-bg')) 
@@ -144,13 +164,15 @@
 			'background-position': 'center top'
 		});
 	}
+	$('.dropkick').dropkick({mobile:true});
 	$('.slickerd').slick({
 		vertical: true,
 		verticalSwiping: true,
 		slidesToScroll:1,
 		slidesToShow: 3,
 		focusOnSelect: true,
-		asNavFor: '.feature-img'
+		asNavFor: '.feature-img',
+		autoplay: true
 	});
 	$('.feature-img').slick({
 		slidesToShow: 1,

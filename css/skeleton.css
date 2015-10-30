@@ -166,7 +166,6 @@ a:hover {
 /* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .button,
-button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
@@ -188,12 +187,10 @@ input[type="button"] {
   cursor: pointer;
   box-sizing: border-box; }
 .button:hover,
-button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover,
 .button:focus,
-button:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
@@ -322,7 +319,7 @@ pre > code {
 
 /* Tables
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-th,
+/*th,
 td {
   padding: 12px 15px;
   text-align: left;
@@ -333,11 +330,10 @@ td:first-child {
 th:last-child,
 td:last-child {
   padding-right: 0; }
-
+*/
 
 /* Spacing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-button,
 .button {
   margin-bottom: 1rem; }
 input,
@@ -349,7 +345,6 @@ pre,
 blockquote,
 dl,
 figure,
-table,
 p,
 ul,
 ol,
