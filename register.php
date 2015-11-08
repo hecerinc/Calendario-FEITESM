@@ -23,6 +23,7 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/pikaday.css">
+	<link rel="stylesheet" href="css/datetimepicker.css">
 	<link rel="stylesheet" href="style.css">
 	<!-- Favicon
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -59,9 +60,9 @@
 				<label for="name">Comunidad Estudiantil:</label>
 				<input type="text" name="name" id="name">
 				<label for="start_date">Fecha inicio:</label>
-				<input type="text" name="start_date" id="start_date">
+				<input type="text" class="datetime" name="start_date" id="start_date">
 				<label for="end_date">Fecha fin:</label>
-				<input type="text" name="end_date" id="end_date">
+				<input type="text" class="datetime" name="end_date" id="end_date">
 				<label for="sede">Sede:</label>
 				<input type="text" name="sede" id="sede">
 				<label for="sede">Link:</label>
@@ -80,9 +81,8 @@
 	<footer>
 		<p class="text-center fz12">Copyright &copy; 2015 H&eacute;ctor Rinc&oacute;n</p>
 	</footer>
-<script src="js/jquery-1.11.0.min.js"></script>
-<script src="js/moment.js"></script>
-<script src="js/pikaday.js"></script>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/jquery.datetimepicker.js"></script>
 <script>
 	$('section, article, .img-bg').each(function(){ 
 		if($(this).attr('data-bg')) 
@@ -90,21 +90,9 @@
 		if($(this).attr('data-bgc')) 
 			$(this).css('background-color', '#' + $(this).attr('data-bgc')); 
 	});
-	moment.locale('es');
-	var i18n = {
-		previousMonth : 'Mes anterior',
-		nextMonth     : 'Siguiente mes',
-		months        : ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Deciembre'],
-		weekdays      : ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],
-		weekdaysShort : ['Dom','Lun','Mar','Mie','Jue','Vie','Sab']
-	};
-    var picker = new Pikaday({ 
-    	field: document.getElementById('end_date'),
-		position:'bottom',
-		i18n: i18n,
-		format: 'DD MMMM YYYY'
- 	});
-    var picker2 = new Pikaday({field: document.getElementById('start_date'), i18n: i18n, format: 'DD MMMM YYYY'});
+	$(".datetime").datetimepicker({
+		lang: 'es'
+	});
 	if($('.special-img-bg').attr('data-bg')){
 		var img = $('.special-img-bg').attr('data-bg');
 		$('.special-img-bg').css({

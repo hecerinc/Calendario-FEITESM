@@ -98,6 +98,8 @@
 		</div>
 	</section>
 	<div class="clear "></div>
+
+	
 	<section class="calendar container">
 		<h3 class="title">Eventos de la semana</h3>
 		<a href="#" class="u-fr add-all">Agregar todos a mi calendario</a>
